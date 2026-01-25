@@ -5,19 +5,24 @@
 @endsection
 
 @section('content')
-<h2>ログイン</h2>
-<form action="/login" method="post">
-    <div>
-        <label for="email">メールアドレス</label>
-        <input type="email" name="email" id="email" value="{{ old('email') }}">
+<div class="form-container">
+    <h2 class="title">ログイン</h2>
+    <form action="/login" method="post">
+        @csrf
+        <div class="form-inner">
+            <div class="form-group">
+                <label class="form-group_label" for="email">メールアドレス</label>
+                <input class="form-group_input" type="email" name="email" id="email" value="{{ old('email') }}">
+            </div>
+            <div class="form-group">
+                <label class="form-group_label" for="password">パスワード</label>
+                <input class="form-group_input" type="password" name="password" id="password">
+            </div>
+        </div>
+        <button type="submit" class="button">ログインする</button>
+    </form>
+    <div class="link">
+        <a class="link__inner" href="/register">会員登録はこちら</a>
     </div>
-    <div>
-        <label for="password">パスワード</label>
-        <input type="password" name="password" id="password">
-    </div>
-    <button>ログイン</button>
-</form>
-<div>
-    <a href="">会員登録はこちら</a>
 </div>
 @endsection

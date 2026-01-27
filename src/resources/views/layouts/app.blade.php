@@ -15,6 +15,17 @@
         <div class="header_space">
             <img class="header_img" src="{{ asset('images/COACHTECHヘッダーロゴ.png') }}" alt="COACHTECH">
         </div>
+        @if (Auth::check())
+        <li class="header-nav__item">
+            <a class="header-nav__link" href="/mypage">マイページ</a>
+        </li>
+        <li class="header-nav__item">
+            <form action="/logout" method="post">
+                @csrf
+                <button class="header-nav__button">ログアウト</button>
+            </form>
+        </li>
+        @endif
     </header>
     <main>
         @yield('content')

@@ -25,13 +25,13 @@
     border-radius: 50%;
 }
 
-.button {
+
+.profile__link-edit {
+    text-decoration: none;
     color: #FF5555;
     border: #FF5555 2px solid;
-    border-radius: 3px;
-    background-color: #FFF;
+    border-radius: 5px;
     padding: 5px 10px;
-    margin-left: 20px;
     cursor: pointer;
 }
 

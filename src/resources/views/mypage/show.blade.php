@@ -13,8 +13,8 @@
         <div class="profile__user-name">
             <h2>ユーザー名</h2>
         </div>
-        <div class="profile__button">
-            <button class="button">プロフィールを編集</button>
+        <div class="profile__link">
+            <a class="profile__link-edit" href="/mypage/profile">プロフィールを編集</a>
         </div>
     </div>
 

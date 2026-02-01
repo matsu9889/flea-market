@@ -6,12 +6,20 @@ use Illuminate\Http\Request;
 
 class MyPageController extends Controller
 {
-    public function show(){
+    public function show(Request $request)
+    {
+        $profile = $request->only(['img', 'name']);
         return view('mypage.show');
     }
 
-    public function update()
+    public function edit()
     {
         return view('mypage.edit');
+    }
+
+    public function update(Request $request)
+    {
+        $profile = $request->only(['name', 'post', 'address', 'building']);
+        return view('mypage.show', compact('profile'));
     }
 }

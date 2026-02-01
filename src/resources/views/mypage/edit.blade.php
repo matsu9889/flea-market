@@ -7,7 +7,7 @@
 @section('content')
 <div class="form-container">
     <h2 class="title">プロフィール設定</h2>
-    <form action="" method="">
+    <form action="/mypage/profile" method="POST">
         @csrf
         <div class="image-group">
             <div class="image">
@@ -28,10 +28,10 @@
                 </div>
             </div>
             <div class="form-group">
-                <label class="form-group_label" for="number">郵便番号</label>
-                <input class="form-group_input" type="number" name="number" id="number" value="{{ old('number') }}">
+                <label class="form-group_label" for="post">郵便番号</label>
+                <input class="form-group_input" type="number" name="post" id="post" value="{{ old('post') }}">
                 <div class="error">
-                    @error('number')
+                    @error('post')
                     {{ $message }}
                     @enderror
                 </div>

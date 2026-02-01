@@ -5,7 +5,7 @@
 @endsection
 
 @section('content')
-<form action="/show" method="GET">
+<form action="/mypage" method="GET">
     <div class="profile">
         <div class="profile__image">
             <img src="" alt="プロフィール画像">

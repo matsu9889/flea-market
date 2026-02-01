@@ -11,10 +11,10 @@
         @csrf
         <div class="form-inner">
             <div class="form-group">
-                <label class="form-group_label" for="name">ユーザー名</label>
-                <input class="form-group_input" type="text" name="name" id="name" value="{{ old('name') }}">
+                <label class="form-group_label" for="user_name">ユーザー名</label>
+                <input class="form-group_input" type="text" name="user_name" id="user_name" value="{{ old('user_name') }}">
                 <div class="error">
-                    @error('name')
+                    @error('user_name')
                     {{ $message }}
                     @enderror
                 </div>

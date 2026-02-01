@@ -22,7 +22,7 @@ class CreateNewUser implements CreatesNewUsers
         Validator::make(
             $input,
             [
-                'name' => ['required', 'string', 'max:20'],
+                'user_name' => ['required', 'string', 'max:20'],
                 'email' => [
                     'required',
                     'string',
@@ -33,7 +33,7 @@ class CreateNewUser implements CreatesNewUsers
                 'password' => $this->passwordRules(),
             ],
             [
-                'name.required' => 'お名前を入力してください',
+                'user_name.required' => 'お名前を入力してください',
                 'email.required' => 'メールアドレスを入力してください',
                 'email.email' => 'メールアドレスはメール形式で入力してください',
                 'password.required' => 'パスワードを入力してください',
@@ -43,7 +43,7 @@ class CreateNewUser implements CreatesNewUsers
         )->validate();
 
         return User::create([
-            'name' => $input['name'],
+            'user_name' => $input['user_name'],
             'email' => $input['email'],
             'password' => Hash::make($input['password']),
         ]);

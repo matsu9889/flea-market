@@ -20,24 +20,28 @@
 .image-group {
     display: flex;
     align-items: center;
-    margin-bottom: 20px;
+    margin: 50px 0;
 }
 
 .image {
-    width: 100px;
-    height: 100px;
+    width: 150px;
+    height: 150px;
     background-color: #DDD;
     border-radius: 50%;
 }
 
-.select-button {
+.image-button {
     color: #FF5555;
-    border: #FF5555 1px solid;
-    border-radius: 3px;
+    border: #FF5555 2px solid;
+    border-radius: 5px;
     background-color: #FFF;
     padding: 5px 10px;
-    margin-left: 20px;
+    margin-left: 30px;
     cursor: pointer;
+}
+
+.image-input {
+    display: none;
 }
 
 .form-group {

@@ -16,18 +16,26 @@ class MyPageController extends Controller
     public function edit()
     {
         $user = Auth::user();
-        return view('mypage.edit',compact('user'));
+        return view('mypage.edit', compact('user'));
     }
 
     public function update(Request $request)
     {
         $user = Auth::user();
+        $data = $request->only([
+            'user_name',
+            'post_code',
+            'address',
+            'building',
+        ]);
+
         // 画像がアップロードされたときだけ
         if ($request->hasFile('image')) {
-            $path = $request->file('image')->store('profile', 'public');
-            $user->image = $path;
+            $data['image'] = $request->file('image')->store('profile', 'public');
         }
-        $profile = $request->only(['user_name', 'post_code', 'address', 'building']);
-        return view('mypage.show', compact('profile'));
+
+        $user->update($data);
+
+        return redirect('/mypage');
     }
 }

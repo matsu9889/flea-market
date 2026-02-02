@@ -8,6 +8,7 @@
 <div class="form-container">
     <h2 class="title">プロフィール設定</h2>
     <form action="/mypage/profile" method="POST" enctype="multipart/form-data">
+        @method('PATCH')
         @csrf
         <div class="image-group">
             <div class="image">
@@ -30,7 +31,7 @@
             </div>
             <div class="form-group">
                 <label class="form-group_label" for="post_code">郵便番号</label>
-                <input class="form-group_input" type="number" name="post_code" id="post_code" value="{{ old('post_code') }}">
+                <input class="form-group_input" type="text" name="post_code" id="post_code" value="{{ old('post_code',$user->post_code) }}">
                 <div class="error">
                     @error('post_code')
                     {{ $message }}
@@ -39,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label class="form-group_label" for="address">住所</label>
-                <input class="form-group_input" type="address" name="address" id="address" value="{{ old('address') }}">
+                <input class="form-group_input" type="address" name="address" id="address" value="{{ old('address',$user->address) }}">
                 <div class="error">
                     @error('address')
                     {{ $message }}
@@ -48,7 +49,7 @@
             </div>
             <div class="form-group">
                 <label class="form-group_label" for="building">建物名</label>
-                <input class="form-group_input" type="building" name="building" id="building" value="{{ old('building') }}">
+                <input class="form-group_input" type="building" name="building" id="building" value="{{ old('building',$user->building) }}">
                 <div class="error">
                     @error('building')
                     {{ $message }}

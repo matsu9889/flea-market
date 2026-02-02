@@ -18,7 +18,7 @@ use App\Http\Controllers\MyPageController;
 Route::get('/', [AuthController::class, 'index']);
 Route::middleware('auth')->group(function () {
     Route::get('/', [AuthController::class, 'index']);
+    Route::get('/mypage', [MyPageController::class, 'show']);
+    Route::get('/mypage/profile', [MyPageController::class, 'edit']);
+    Route::patch('/mypage/profile', [MyPageController::class, 'update']);
 });
-Route::get('/mypage', [MyPageController::class, 'show']);
-Route::get('/mypage/profile', [MyPageController::class, 'edit']);
-Route::post('/mypage/profile', [MyPageController::class, 'update']);

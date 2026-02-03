@@ -9,8 +9,8 @@ class MyPageController extends Controller
 {
     public function show(Request $request)
     {
-        $profile = $request->only(['img', 'user_name']);
-        return view('mypage.show');
+        $user = Auth::user();
+        return view('mypage.show', compact('user'));
     }
 
     public function edit()
@@ -22,6 +22,7 @@ class MyPageController extends Controller
     public function update(Request $request)
     {
         $user = Auth::user();
+
         $data = $request->only([
             'user_name',
             'post_code',

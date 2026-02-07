@@ -1,9 +1,38 @@
-.header_space {
-    height: 60px;
+.header {
+    display: flex;
+    justify-content: space-between;
     background-color: #000;
+}
+
+.header_logo {
+    height: 60px;
 }
 
 .header_img {
     height: 60px;
     padding: 15px 20px;
+}
+
+.header-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header-nav__item {
+    list-style: none;
+}
+
+.header-nav__logout {
+    color: #FFF;
+    background: none;
+}
+
+.header-nav__mypage {
+    color: #FFF;
+}
+
+.header-nav__listing {
+    color: #000;
+    background-color: #FFF;
 }

@@ -17,10 +17,10 @@ class CreateItemsTable extends Migration
             $table->id();
             $table->string('item_name');
             $table->integer('price');
-            $table->string('brand_name');
+            $table->string('brand_name')->nullable();
             $table->string('description');
             $table->string('img_url');
-            $table->string('category');
+            $table->string('category')->nullable(); //あとで直す
             $table->string('condition');
             $table->boolean('purchased_flag')->default(false);
             $table->timestamps();

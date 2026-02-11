@@ -6,8 +6,9 @@ use Illuminate\Http\Request;
 
 class ItemController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        return view('items/index');
+        $items = $request->only(['item_name', 'img_url', 'purchased_flag']);
+        return view('items/index', compact('items'));
     }
 }

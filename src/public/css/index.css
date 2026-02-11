@@ -29,7 +29,7 @@
     color: #FF5555;
 }
 
-.listing-container {
+.item_container {
     width: 90%;
     margin: 0 auto;
     display: grid;
@@ -37,12 +37,18 @@
     gap: 30px;
 }
 
-.listing-item {
+.item {
     height: 100%;
 }
 
-.listing-item-img {
+.item-img {
     width: 100%;
     aspect-ratio: 1 / 1;
     background-color: #DDD;
 }
+
+.item-img img {
+    width: 100%;
+}
+
+

@@ -13,39 +13,15 @@
             <button class="mylist-button">マイリスト</button>
         </div>
 
-        <div class="screen">
-            <div class="listing-container">
-                <div class="listing-item">
-                    <div class="listing-item-img">
-                        <img src="{{ $items['img_url'] }}" alt="商品画像">
-                    </div>
-                    <p>{{ $items['item_name'] }}</p>
+        <div class="item_container">
+            @foreach ($items as $item)
+            <div class="item">
+                <div class="item-img">
+                    <img src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
                 </div>
-                <div class="listing-item">
-                    <div class="listing-item-img">
-                        <img src="" alt="商品画像">
-                    </div>
-                    <p>商品名</p>
-                </div>
-                <div class="listing-item">
-                    <div class="listing-item-img">
-                        <img src="" alt="商品画像">
-                    </div>
-                    <p>商品名</p>
-                </div>
-                <div class="listing-item">
-                    <div class="listing-item-img">
-                        <img src="" alt="商品画像">
-                    </div>
-                    <p>商品名</p>
-                </div>
-                <div class="listing-item">
-                    <div class="listing-item-img">
-                        <img src="" alt="商品画像">
-                    </div>
-                    <p>商品名</p>
-                </div>
+                <p>{{ $item->item_name }}</p>
             </div>
+            @endforeach
         </div>
     </form>
 </div>

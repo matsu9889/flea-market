@@ -3,12 +3,13 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\Item;
 
 class ItemController extends Controller
 {
-    public function index(Request $request)
+    public function index()
     {
-        $items = $request->only(['item_name', 'img_url', 'purchased_flag']);
-        return view('items/index', compact('items'));
+        $items = Item::all();
+        return view('items.index', compact('items'));
     }
 }

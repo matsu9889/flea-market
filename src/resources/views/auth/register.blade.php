@@ -50,7 +50,7 @@
         <button type="submit" class="button">登録する</button>
     </form>
     <div class="link">
-        <a class="link__inner" href="/login">ログインはこちら</a>
+        <a class="link__inner" href="{{ route('login') }}">ログインはこちら</a>
     </div>
 </div>
 @endsection

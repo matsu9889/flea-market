@@ -8,8 +8,8 @@ use App\Http\Requests\LoginRequest;
 
 class AuthController extends Controller
 {
-    public function index()
+    public function create()
     {
-        return view('items.index');
+        return view('auth/register');
     }
 }

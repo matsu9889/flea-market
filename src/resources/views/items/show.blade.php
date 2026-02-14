@@ -6,36 +6,47 @@
 @endsection
 
 @section('content')
-<div class="container">
-    <!-- <form action="/item/" method="GET"> -->
-    <div class="item_container">
-        <div class="item">
-            <div class="item-img">
-                <img src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
-            </div>
+<!-- <form action="/item/" method="GET"> -->
+<div class="item">
+    <div class="item__img-area">
+        <img class="item__img" src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
+    </div>
 
-            <div class="item-detail">
-                <!-- 商品名 -->
-                <p>{{ $item->item_name }}</p>
-                <!-- ブランド名 -->
-                <p></p>
-                <!-- 金額 -->
-                <p></p>
-                <!-- いいねボタン、コメントボタン -->
-                <button>購入手続きへ</button>
-                <h2>商品説明</h2>
-                <p>{{ $item->description }}</p>
-                <h2>商品の情報</h2>
-                <h3>カテゴリー</h3>
-                <h3>商品の状態</h3>
-                <p>{{ $item->condition }}</p>
-                <h2>コメント</h2>
-                <h2>商品へのコメント</h2>
-                <button>コメントを送信する</button>
-            </div>
+    <div class="item-detail">
+        <!-- 商品名 -->
+        <p class="item__name">{{ $item->item_name }}</p>
+        <!-- ブランド名 -->
+        <p class="item__brand">{{ $item->brand_name }}</p>
+        <!-- 金額 -->
+        <p class="item__price--yen">&yen;<span class="item__price">{{ $item->price }}</span>(税込)</p>
+        <!-- いいねボタン、コメントボタン -->
+        <div class="item__link">
+            <a class="item__link--purchase" href="">購入手続きへ</a>
+        </div>
 
+
+        <div class="item__section">
+            <h2 class="item__section-title">商品説明</h2>
+            <p class="item__description">{{ $item->description }}</p>
+        </div>
+        <div class="item__section">
+            <h2 class="item__section-title">商品の情報</h2>
+            <h3 class="item__section-sub-title">カテゴリー</h3>
+            <h3 class="item__section-sub-title">商品の状態</h3>
+            <p class="item__section-condition">{{ $item->condition }}</p>
+        </div>
+        <div class="item__section">
+            <h2 class="item__section-comment">コメント</h2>
+            <div class="item__section-comment__list">
+                <!-- コメント一覧ここに入る -->
+            </div>
+        </div>
+        <div class="item__section">
+            <h2 class="item__section-comment__title">商品へのコメント</h2>
+            <textarea class="item__section-comment__textarea"></textarea>
+            <button class="item__button">コメントを送信する</button>
         </div>
     </div>
-    <!-- </form> -->
 </div>
+<!-- </form> -->
 @endsection

@@ -16,8 +16,11 @@
         <div class="item_container">
             @foreach ($items as $item)
             <div class="item">
-                <div class="item-img">
-                    <img src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
+                <div class="item__img-area">
+                    <img class="item__img" src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
+                    <div class="item__img-sold">
+                        <p class="item__img-message">Sold</p>
+                    </div>
                 </div>
                 <p>{{ $item->item_name }}</p>
             </div>

@@ -15,6 +15,7 @@ class ItemController extends Controller
 
     public function show($item_id){
         $item = Item::findOrFail($item_id);
+        $items = Item::with('purchase')->get();
         return view('items.show', compact('item'));
     }
 

@@ -22,7 +22,6 @@ class CreateItemsTable extends Migration
             $table->string('img_url');
             $table->string('category')->nullable(); //あとで直す
             $table->string('condition');
-            $table->boolean('purchased_flag')->default(false);
             $table->timestamps();
         });
     }

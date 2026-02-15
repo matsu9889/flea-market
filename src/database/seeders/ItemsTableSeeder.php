@@ -22,7 +22,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/Clock.jpg',
             'category' => NULL,
             'condition' => '良好',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -33,7 +32,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/HDD.jpg',
             'category' => NULL,
             'condition' => '目立った傷や汚れなし',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -44,7 +42,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/Onion.jpg',
             'category' => NULL,
             'condition' => 'やや傷や汚れあり',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -55,7 +52,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/LeatherShoes.jpg',
             'category' => NULL,
             'condition' => '状態が悪い',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -66,7 +62,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/PC.jpg',
             'category' => NULL,
             'condition' => '良好',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -77,7 +72,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/Mic.jpg',
             'category' => NULL,
             'condition' => '目立った傷や汚れなし',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -88,7 +82,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/Bag.jpg',
             'category' => NULL,
             'condition' => 'やや傷や汚れあり',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -99,7 +92,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/Tumbler.jpg',
             'category' => NULL,
             'condition' => '状態が悪い',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -110,7 +102,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/Coffee.jpg',
             'category' => NULL,
             'condition' => '良好',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -121,7 +112,6 @@ class ItemsTableSeeder extends Seeder
             'img_url' => 'items/Makeup.jpg',
             'category' => NULL,
             'condition' => '目立った傷や汚れなし',
-            'purchased_flag' => 0,
         ];
         DB::table('items')->insert($items);
     }

@@ -10,11 +10,16 @@ class ItemController extends Controller
     // 商品一覧
     public function index()
     {
-        $items = Item::with(['purchase', 'listing'])
-            ->whereHas('listing', function ($query) {
-                $query->where('user_id', '!=', auth()->id());
-            })
-            ->get();
+        $query = Item::with(['purchase', 'listing']);
+
+        if (auth()->check()) {
+            $query->whereHas('listing', function ($q) {
+                $q->where('user_id', '!=', auth()->id());
+            });
+        }
+
+        $items = $query->get();
+
         return view('items.index', compact('items'));
     }
 

@@ -44,6 +44,10 @@
     height: 100%;
 }
 
+.item__link {
+    text-decoration: none;
+}
+
 .item__img-area {
     position: relative;
     width: 100%;
@@ -76,5 +80,9 @@
     font-size: 20px;
     font-weight: bold;
     transform: rotate(-45deg) translate(15%, 0%);
+}
+
+.item__name {
+    color: #000;
 }
 

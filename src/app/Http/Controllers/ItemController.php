@@ -20,7 +20,17 @@ class ItemController extends Controller
 
         $items = $query->get();
 
-        return view('items.index', compact('items'));
+        // マイリスト取得
+        $mylistItems = collect();
+        if (auth()->check()) {
+            $mylistItems = Item::with(['purchase', 'listing'])
+                ->whereHas('favorites', function ($q) {
+                    $q->where('user_id', auth()->id());
+                })
+                ->get();
+        }
+
+        return view('items.index', compact('items', 'mylistItems'));
     }
 
     // 商品詳細

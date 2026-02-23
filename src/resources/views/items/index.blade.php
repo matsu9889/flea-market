@@ -37,8 +37,7 @@
         <!-- マイリストタブ -->
         <div class="tab-content" id="mylist">
             <div class="item_container">
-                <p>マイリストの商品がここに表示されます</p>
-                @foreach ($items as $item)
+                @foreach ($mylistItems as $item)
                 <div class="item">
                     <a class="item__link" href="/item/{{ $item->id }}">
                         <div class="item__img-area">

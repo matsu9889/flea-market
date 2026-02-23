@@ -18,6 +18,11 @@ class Item extends Model
     {
         return $this->hasOne(Listing::class);
     }
+
+    public function favorites()
+    {
+        return $this->hasMany(Favorite::class);
+    }
 }
 
 

@@ -7,7 +7,6 @@
 
 @section('content')
 <div class="container">
-    <!-- <form action="/" method="GET"> -->
     <div class="tab-buttons">
         <button type="button" class="tab-button active" data-tab="recommend">おすすめ</button>
         <button type="button" class="tab-button" data-tab="mylist">マイリスト</button>
@@ -39,10 +38,24 @@
         <div class="tab-content" id="mylist">
             <div class="item_container">
                 <p>マイリストの商品がここに表示されます</p>
+                @foreach ($items as $item)
+                <div class="item">
+                    <a class="item__link" href="/item/{{ $item->id }}">
+                        <div class="item__img-area">
+                            <img class="item__img" src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
+                            @if($item->purchase)
+                            <div class="item__img-sold">
+                                <p class="item__img-message">Sold</p>
+                            </div>
+                            @endif
+                        </div>
+                        <p class="item__name">{{ $item->item_name }}</p>
+                    </a>
+                </div>
+                @endforeach
             </div>
         </div>
     </div>
-    <!-- </form> -->
 </div>
 
 <!-- JavaScript -->

@@ -6,7 +6,6 @@
 @endsection
 
 @section('content')
-<!-- <form action="/item/" method="GET"> -->
 <div class="item">
     <div class="item__img-area">
         <img class="item__img" src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
@@ -42,11 +41,12 @@
             </div>
         </div>
         <div class="item__section">
-            <h2 class="item__section-comment__title">商品へのコメント</h2>
-            <textarea class="item__section-comment__textarea"></textarea>
-            <button class="item__button">コメントを送信する</button>
+            <form action="/item/" method="POST">
+                <h2 class="item__section-comment__title">商品へのコメント</h2>
+                <textarea class="item__section-comment__textarea"></textarea>
+                <button class="item__button">コメントを送信する</button>
+            </form>
         </div>
     </div>
 </div>
-<!-- </form> -->
 @endsection

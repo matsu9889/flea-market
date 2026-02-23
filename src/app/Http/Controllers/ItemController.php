@@ -31,4 +31,9 @@ class ItemController extends Controller
 
         return view('items.show', compact('item'));
     }
+
+    public function store(Request $request){
+        //$comment = $request->validate()
+        //return view('items.show');
+    }
 }

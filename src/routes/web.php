@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
 use App\Http\Controllers\MyPageController;
 use App\Http\Controllers\ItemController;
+use App\Http\Controllers\PurchaseController;
 
 /*
 |--------------------------------------------------------------------------
@@ -20,6 +21,7 @@ Route::get('/', [ItemController::class, 'index']);
 Route::get('/item/{item_id}', [ItemController::class, 'show']);
 Route::middleware('auth')->group(function () {
     //Route::get('/', [AuthController::class, 'index']);
+    Route::get('/purchase/{item_id}', [PurchaseController::class, 'create']);
     Route::get('/mypage', [MyPageController::class, 'show']);
     Route::get('/mypage/profile', [MyPageController::class, 'edit']);
     Route::patch('/mypage/profile', [MyPageController::class, 'update']);

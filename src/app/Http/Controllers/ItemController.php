@@ -8,14 +8,21 @@ use App\Models\Item;
 class ItemController extends Controller
 {
     // 商品一覧
-    public function index()
+    public function index(Request $request)
     {
+        $keyword = $request->input('keyword', '');
+
         $query = Item::with(['purchase', 'listing']);
 
         if (auth()->check()) {
             $query->whereHas('listing', function ($q) {
                 $q->where('user_id', '!=', auth()->id());
             });
+        }
+
+        // 検索
+        if ($keyword) {
+            $query->where('item_name', 'LIKE', "%{$keyword}%");
         }
 
         $items = $query->get();
@@ -30,7 +37,7 @@ class ItemController extends Controller
                 ->get();
         }
 
-        return view('items.index', compact('items', 'mylistItems'));
+        return view('items.index', compact('items', 'mylistItems', 'keyword'));
     }
 
     // 商品詳細

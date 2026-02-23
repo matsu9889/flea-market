@@ -18,9 +18,8 @@
             </a>
         </div>
 
-        <form action="find" method="POST">
-            @csrf
-            <input class="header-nav__search" input type="text" name="input" value="" placeholder="なにをお探しですか？">
+        <form action="/" method="GET">
+            <input class="header-nav__search" type="text" name="keyword" value="{{ request('keyword') }}" placeholder="なにをお探しですか？">
         </form>
 
         <ul class="header-nav">

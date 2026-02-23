@@ -32,8 +32,29 @@ class ItemController extends Controller
         return view('items.show', compact('item'));
     }
 
-    public function store(Request $request){
-        //$comment = $request->validate()
-        //return view('items.show');
+    //商品出品画面表示
+    public function create(Request $request)
+    {
+        return view('items.create');
+    }
+
+    //商品出品
+    public function store(Request $request)
+    {
+        $data = $request->only([
+            'item_name',
+            'price',
+            'brand_name',
+            'description',
+            'img_url',
+            'category',
+            'condition',
+        ]);
+
+        if ($request->hasFile('image')) {
+            $data['image'] = $request->file('image')->store('profile', 'public');
+        }
+
+        return view('items.create');
     }
 }

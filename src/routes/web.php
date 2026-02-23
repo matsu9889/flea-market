@@ -21,6 +21,8 @@ Route::get('/', [ItemController::class, 'index']);
 Route::get('/item/{item_id}', [ItemController::class, 'show']);
 Route::middleware('auth')->group(function () {
     //Route::get('/', [AuthController::class, 'index']);
+    Route::get('/sell', [ItemController::class, 'create']);
+    Route::post('/sell', [ItemController::class, 'store']);
     Route::get('/purchase/{item_id}', [PurchaseController::class, 'create']);
     Route::get('/mypage', [MyPageController::class, 'show']);
     Route::get('/mypage/profile', [MyPageController::class, 'edit']);

@@ -64,13 +64,10 @@
             document.querySelectorAll('.tab-button').forEach(btn => {
                 btn.classList.remove('active');
             });
-
             document.querySelectorAll('.tab-content').forEach(content => {
                 content.classList.remove('active');
             });
-
             this.classList.add('active');
-
             const tabName = this.dataset.tab;
             document.getElementById(tabName).classList.add('active');
         });

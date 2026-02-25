@@ -12,11 +12,15 @@ class ItemController extends Controller
     {
         $keyword = $request->input('keyword', '');
 
-        $query = Item::with(['purchase', 'listing']);
+        $query = Item::with(['purchase', 'listing']); //withの意味
 
+        //商品一覧取得
         if (auth()->check()) {
-            $query->whereHas('listing', function ($q) {
-                $q->where('user_id', '!=', auth()->id());
+            $query->where(function ($q) {
+                $q->whereDoesntHave('listing')
+                    ->orWhereHas('listing', function ($q) {
+                        $q->where('user_id', '!=', auth()->id());
+                    });
             });
         }
 
@@ -28,7 +32,7 @@ class ItemController extends Controller
         $items = $query->get();
 
         // マイリスト取得
-        $mylistItems = collect();
+        $mylistItems = collect(); //空にしている。必要かどうか
         if (auth()->check()) {
             $mylistItems = Item::with(['purchase', 'listing'])
                 ->whereHas('favorites', function ($q) {

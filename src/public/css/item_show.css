@@ -31,6 +31,14 @@
     font-size: 24px;
 }
 
+.item__icon {
+    margin-bottom: 20px;
+}
+
+
+
+
+
 .item__link {
     text-align: center;
     background-color: #FF5555;

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Item;
+use App\Models\Favorite;
 
 class ItemController extends Controller
 {
@@ -51,6 +52,21 @@ class ItemController extends Controller
             ->findOrFail($item_id);
 
         return view('items.show', compact('item'));
+    }
+
+    //いいね機能
+    public function toggleFavorite($item_id)
+    {
+        $item = Item::findOrFail($item_id);
+
+        if ($item->is_liked_by_auth_user()) {
+            $item->favorites()->where('user_id', auth()->id())->delete();
+        } else {
+            Favorite::create([
+                'user_id' => auth()->id(),
+                'item_id' => $item_id,
+            ]);
+        }
     }
 
     //商品出品画面表示

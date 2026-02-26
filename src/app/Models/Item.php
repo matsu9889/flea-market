@@ -23,6 +23,12 @@ class Item extends Model
     {
         return $this->hasMany(Favorite::class);
     }
+
+    //いいね機能
+    public function is_liked_by_auth_user()
+    {
+        return $this->favorites()->where('user_id', auth()->id())->exists();
+    }
 }
 
 

@@ -67,6 +67,8 @@ class ItemController extends Controller
                 'item_id' => $item_id,
             ]);
         }
+
+        return redirect('/item/' . $item_id);
     }
 
     //商品出品画面表示

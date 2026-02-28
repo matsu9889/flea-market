@@ -20,12 +20,17 @@
         <p class="item__price--yen">&yen;<span class="item__price">{{ $item->price }}</span>(税込)</p>
         <!-- いいねボタン、コメントボタン -->
         <div class="item__icon">
-            @if($item->is_liked_by_auth_user())
-            <img class="item__icon-heart" src="{{ asset('images/ハートロゴ_デフォルト.png') }}" alt="ハート">
-            @else
-            <img class="item__icon-heart--action" src="{{ asset('images/ハートロゴ_ピンク.png') }}" alt="ハートピンク">
-            @endif
-            <img class="item__icon-speech" src="{{ asset('images/ふきだしロゴ.png') }}" alt="ふきだし">
+            <form action="/item/{{ $item->id }}/favorite" method="POST">
+                @csrf
+
+                @if($item->is_liked_by_auth_user())
+                <input class="item__icon-heart--action" type="image" src="{{ asset('images/ハートロゴ_ピンク.png') }}" alt="ハートピンク">
+                @else
+                <input class="item__icon-heart" type="image" src="{{ asset('images/ハートロゴ_デフォルト.png') }}" alt="ハート">
+                @endif
+
+            </form>
+            <input class="item__icon-speech" type="image" src="{{ asset('images/ふきだしロゴ.png') }}" alt="ふきだし">
         </div>
         <div class="item__link">
             <a class="item__link--purchase" href="">購入手続きへ</a>

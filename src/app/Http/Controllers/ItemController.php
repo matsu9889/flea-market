@@ -49,6 +49,7 @@ class ItemController extends Controller
     public function show($item_id)
     {
         $item = Item::with(['purchase', 'listing'])
+            ->withCount('favorites')
             ->findOrFail($item_id);
 
         return view('items.show', compact('item'));

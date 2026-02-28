@@ -22,15 +22,15 @@
         <div class="item__icon">
             <form action="/item/{{ $item->id }}/favorite" method="POST">
                 @csrf
-
                 @if($item->is_liked_by_auth_user())
                 <input class="item__icon-heart--action" type="image" src="{{ asset('images/ハートロゴ_ピンク.png') }}" alt="ハートピンク">
                 @else
                 <input class="item__icon-heart" type="image" src="{{ asset('images/ハートロゴ_デフォルト.png') }}" alt="ハート">
                 @endif
-
             </form>
             <input class="item__icon-speech" type="image" src="{{ asset('images/ふきだしロゴ.png') }}" alt="ふきだし">
+            <div>{{ $item->favorites_count }}</div>
+            <div></div>
         </div>
         <div class="item__link">
             <a class="item__link--purchase" href="">購入手続きへ</a>

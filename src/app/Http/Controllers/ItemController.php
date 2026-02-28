@@ -51,6 +51,7 @@ class ItemController extends Controller
     {
         $item = Item::with(['purchase', 'listing'])
             ->withCount('favorites')
+            ->withCount('comments')
             ->findOrFail($item_id);
 
         return view('items.show', compact('item'));

@@ -30,7 +30,7 @@
             </form>
             <input class="item__icon-speech" type="image" src="{{ asset('images/ふきだしロゴ.png') }}" alt="ふきだし">
             <div>{{ $item->favorites_count }}</div>
-            <div></div>
+            <div>{{ $item->comments_count }}</div>
         </div>
         <div class="item__link">
             <a class="item__link--purchase" href="/purchase/{{ $item->id }}">購入手続きへ</a>
@@ -49,7 +49,11 @@
         <div class="item__section">
             <h2 class="item__section-comment">コメント</h2>
             <div class="item__section-comment__list">
-                <!-- コメント一覧ここに入る -->
+                @foreach($item->comments as $comment)
+                {{ $comment->user->image }}
+                {{ $comment->user->user_name }}
+                {{ $comment->content }}
+                @endforeach
             </div>
         </div>
         <div class="item__section">

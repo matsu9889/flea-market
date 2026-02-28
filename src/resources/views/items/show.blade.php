@@ -33,7 +33,7 @@
             <div></div>
         </div>
         <div class="item__link">
-            <a class="item__link--purchase" href="">購入手続きへ</a>
+            <a class="item__link--purchase" href="/purchase/{{ $item->id }}">購入手続きへ</a>
         </div>
 
         <div class="item__section">

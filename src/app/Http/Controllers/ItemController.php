@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\CommentRequest;
 use App\Models\Item;
 use App\Models\Favorite;
 use App\Models\Comment;
@@ -75,7 +76,7 @@ class ItemController extends Controller
     }
 
     //コメント機能
-    public function storeComment(Request $request, $item_id)
+    public function storeComment(CommentRequest $request, $item_id)
     {
         $item = Item::findOrFail($item_id);
 

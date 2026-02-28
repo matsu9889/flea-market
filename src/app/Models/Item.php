@@ -24,11 +24,17 @@ class Item extends Model
         return $this->hasMany(Favorite::class);
     }
 
+    public function comments()
+    {
+        return $this->hasMany(Comment::class);
+    }
+
     //いいね機能
     public function is_liked_by_auth_user()
     {
         return $this->favorites()->where('user_id', auth()->id())->exists();
     }
+
 }
 
 

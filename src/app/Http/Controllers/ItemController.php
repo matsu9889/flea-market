@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Item;
 use App\Models\Favorite;
+use App\Models\Comment;
 
 class ItemController extends Controller
 {
@@ -71,6 +72,23 @@ class ItemController extends Controller
 
         return redirect('/item/' . $item_id);
     }
+
+    //コメント機能
+    public function storeComment(Request $request, $item_id)
+    {
+        $item = Item::findOrFail($item_id);
+
+        if (auth()->check()) {
+            Comment::create([
+                'user_id' => auth()->id(),
+                'item_id' => $item_id,
+                'content' => $request->content,
+            ]);
+        };
+
+        return redirect('/item/' . $item_id);
+    }
+
 
     //商品出品画面表示
     public function create(Request $request)

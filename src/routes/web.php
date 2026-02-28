@@ -23,6 +23,7 @@ Route::middleware('auth')->group(function () {
     //Route::get('/', [AuthController::class, 'index']);
     Route::get('/?tab=mylist', [MyPageController::class, 'index']);
     Route::post('/item/{item_id}/favorite', [ItemController::class, 'toggleFavorite']);
+    Route::post('/item/{item_id}/comment', [ItemController::class, 'storeComment']);
     Route::get('/sell', [ItemController::class, 'create']);
     Route::post('/sell', [ItemController::class, 'store']);
     Route::get('/purchase/{item_id}', [PurchaseController::class, 'create']);

@@ -53,9 +53,10 @@
             </div>
         </div>
         <div class="item__section">
-            <form action="/item/" method="POST">
+            <form action="/item/{{ $item->id }}/comment" method="POST">
+                @csrf
                 <h2 class="item__section-comment__title">商品へのコメント</h2>
-                <textarea class="item__section-comment__textarea"></textarea>
+                <textarea class="item__section-comment__textarea" name="content">{{ old('content') }}</textarea>
                 <button class="item__button">コメントを送信する</button>
             </form>
         </div>

@@ -18,13 +18,14 @@ class PurchaseController extends Controller
         return view('items.purchase', compact('item'));
     }
 
-    public function store($item_id)
+    public function store(Request $request ,$item_id)
     {
         Purchase::create([
             'user_id' => auth()->id(),
             'item_id' => $item_id,
+            'payment_method' =>$request->payment
         ]);
 
-        return redirect('items.index');
+        return redirect('/');
     }
 }

@@ -2,30 +2,43 @@
 
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/register.css') }}">
-<link rel="stylesheet" href="{{ asset('css/index.css') }}">
+<link rel="stylesheet" href="{{ asset('css/purchase.css') }}">
 @endsection
 
 @section('content')
 <div class="container">
-    <div class="item_container">
-        <div class="item">
-            <div class="item__img-area">
-                <img class="item__img" src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
-            </div>
-            <p class="item__name">{{ $item->item_name }}</p>
-            <p>支払い方法</p>
-            <select name="" id="">
-                <option value=""></option>
-            </select>
-            <p>配送先</p>
-            <div>{{ $item->item_address }}</div>
+    <div class="item">
+        <div class="item__img-area">
+            <img class="item__img" src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
         </div>
-        <div>
-            <p>商品代金</p>
-            <div></div>
-            <p>支払い方法</p>
-            <div></div>
-            <button>購入する</button>
+        <h1 class="item__name">{{ $item->item_name }}</h1>
+    </div>
+    <div class="payment">
+        <h2>支払い方法</h2>
+        <select class="payment__select" name="" id="">
+            <option value="">選択してください</option>
+            <option value="">コンビニ支払い</option>
+            <option value="">カード支払い</option>
+        </select>
+    </div>
+    <div class="delivery">
+        <div class="delivery__title">
+            <h2>配送先</h2>
+            <a class="delivery__update" href="">変更する</a>
+        </div>
+        <div class="delivery__address">〒{{ Auth::user()->post_code }}</div>
+        <div class="delivery__address">{{ Auth::user()->address }}</div>
+    </div>
+    <div class="confirmation">
+        <div class="confirmation__content">
+            <p class="confirmation__title">商品代金</p>
+            <p class="confirmation__price">&yen;{{ $item->price }}</p>
+        </div>
+        <div class="confirmation__content">
+            <p class="confirmation__title">支払い方法</p>
+            <p class="confirmation__method"></p>
         </div>
     </div>
-    @endsection
+    <button class="purchase__button">購入する</button>
+</div>
+@endsection

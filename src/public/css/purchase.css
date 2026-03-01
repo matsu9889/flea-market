@@ -1,0 +1,128 @@
+.container {
+    width: 90%;
+    margin: 50px auto;
+    display: grid;
+    grid-template-columns: 2fr 1fr; /* 列 */
+    grid-template-rows: 260px 200px 200px;  /* 行 */
+    column-gap: 100px;
+}
+
+@media screen and (max-width : 768px) {
+    .container {
+    grid-template-columns: 1fr;/* 列 */
+    grid-template-rows: 260px 200px 200px 200px 200px;/* 行 */
+    row-gap: 20px;
+    }
+}
+
+.item {
+    grid-column: 1/2;
+    grid-row: 1/2;
+    display: flex;
+    border-bottom: 1px solid #000;
+    padding: 30px 0;
+}
+
+.item__img-area {
+    width: 200px;
+}
+
+.item__img {
+    width: 100%;
+}
+
+.item__name {
+    margin-left: 30px;
+}
+
+.payment {
+    grid-column: 1/2;
+    grid-row: 2/3;
+    border-bottom: 1px solid #000;
+    padding: 0 20px;
+}
+
+.payment__select {
+    width: 200px;
+    margin-left: 100px;
+    padding: 10px;
+    color: #999;
+    font-weight: bold;
+}
+
+.delivery {
+    grid-column: 1/2;
+    grid-row: 3/4;
+    border-bottom: 1px solid #000;
+    padding: 0 20px;
+}
+
+.delivery__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.delivery__update {
+    color: #0073CC;
+    text-decoration: none;
+}
+
+.delivery__address {
+    margin-left: 100px;
+    font-weight: bold;
+}
+
+.confirmation {
+    grid-column: 2/3;
+    grid-row: 1/2;
+    border: 1px solid #000;
+}
+
+@media screen and (max-width : 768px) {
+    .confirmation {
+        grid-column: 1/2;
+        grid-row: 4/5;
+    }
+}
+
+.confirmation__content {
+    height: 50%;
+    display: flex;
+    justify-content: space-between;
+    padding: 0 50px;
+    border-bottom: 1px solid #000;
+    align-items: center;
+}
+
+.confirmation__title {
+    font-size: 20px;
+}
+
+.confirmation__price {
+    font-size: 24px;
+}
+
+.confirmation__method {
+    font-size: 24px;
+}
+
+.purchase__button {
+    grid-column: 2/3;
+    grid-row: 2/3;
+    font-size: 24px;
+    color: #FFF;
+    background-color: #FF5555;
+    border: none;
+    border-radius: 3px;
+    padding: 10px;
+    margin: auto 0;
+    cursor: pointer;
+}
+
+@media screen and (max-width : 768px) {
+    .purchase__button {
+        grid-column: 1/2;
+        grid-row: 5/6;
+    }
+}

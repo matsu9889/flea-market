@@ -31,9 +31,9 @@
                 <h2>配送先</h2>
                 <a class="delivery__update" href="/purchase/address/{{ $item->id }}">変更する</a>
             </div>
-            <div class="delivery__address">〒{{ Auth::user()->post_code }}</div>
-            <div class="delivery__address">{{ Auth::user()->address }}</div>
-            <div class="delivery__address">{{ Auth::user()->building }}</div>
+            <div class="delivery__address">〒{{ session('post_code') ?? Auth::user()->post_code }}</div>
+            <div class="delivery__address">{{ session('address') ?? Auth::user()->address }}</div>
+            <div class="delivery__address">{{ session('building') ?? Auth::user()->building }}</div>
         </div>
         <div class="confirmation">
             <div class="confirmation__content">

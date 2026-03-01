@@ -52,15 +52,15 @@ class MyPageController extends Controller
 
     public function updateAddress(Request $request, $item_id)
     {
-        $user = Auth::user();
-
         $data = $request->only([
             'post_code',
             'address',
             'building',
         ]);
 
-        $user->update($data);
+        session()->put('post_code', $data['post_code']);
+        session()->put('address', $data['address']);
+        session()->put('building', $data['building']);
 
         return redirect('/purchase/' . $item_id);
     }

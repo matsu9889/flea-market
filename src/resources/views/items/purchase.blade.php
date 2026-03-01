@@ -29,7 +29,7 @@
         <div class="delivery">
             <div class="delivery__title">
                 <h2>配送先</h2>
-                <a class="delivery__update" href="">変更する</a>
+                <a class="delivery__update" href="/purchase/address/{{ $item->id }}">変更する</a>
             </div>
             <div class="delivery__address">〒{{ Auth::user()->post_code }}</div>
             <div class="delivery__address">{{ Auth::user()->address }}</div>

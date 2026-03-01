@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use App\Models\Item;
 
 class MyPageController extends Controller
 {
@@ -38,5 +39,29 @@ class MyPageController extends Controller
         $user->update($data);
 
         return redirect('/mypage');
+    }
+
+
+    public function editAddress($item_id)
+    {
+        $user = Auth::user();
+        $item = Item::findOrFail($item_id);
+
+        return view('mypage.address', compact('user','item'));
+    }
+
+    public function updateAddress(Request $request, $item_id)
+    {
+        $user = Auth::user();
+
+        $data = $request->only([
+            'post_code',
+            'address',
+            'building',
+        ]);
+
+        $user->update($data);
+
+        return redirect('/purchase/' . $item_id);
     }
 }

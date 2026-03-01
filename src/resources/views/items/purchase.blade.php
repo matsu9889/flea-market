@@ -11,7 +11,10 @@
         <div class="item__img-area">
             <img class="item__img" src="{{ asset('storage/' . $item->img_url) }}" alt="商品画像">
         </div>
-        <h1 class="item__name">{{ $item->item_name }}</h1>
+        <div>
+            <h1 class="item__name">{{ $item->item_name }}</h1>
+            <h1 class="item__price">&yen;{{ $item->price }}</h1>
+        </div>
     </div>
     <div class="payment">
         <h2>支払い方法</h2>
@@ -39,6 +42,9 @@
             <p class="confirmation__method"></p>
         </div>
     </div>
-    <button class="purchase__button">購入する</button>
+    <form class="purchase" action="/purchase/{{ $item->id }}" method="post">
+        @csrf
+        <button class="purchase__button">購入する</button>
+    </form>
 </div>
 @endsection

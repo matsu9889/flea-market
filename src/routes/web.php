@@ -27,6 +27,7 @@ Route::middleware('auth')->group(function () {
     Route::get('/sell', [ItemController::class, 'create']);
     Route::post('/sell', [ItemController::class, 'store']);
     Route::get('/purchase/{item_id}', [PurchaseController::class, 'create']);
+    Route::post('/purchase/{item_id}', [PurchaseController::class, 'store']);
     Route::get('/mypage', [MyPageController::class, 'show']);
     Route::get('/mypage/profile', [MyPageController::class, 'edit']);
     Route::patch('/mypage/profile', [MyPageController::class, 'update']);

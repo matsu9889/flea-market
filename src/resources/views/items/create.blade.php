@@ -13,8 +13,12 @@
 
         <div class="sell__field">
             <label class="sell__label">商品画像</label>
-            <input class="sell__file" type="file" name="image">
-                画像を選択する
+            <div class="sell__input-area">
+                <label class="sell__image-button" for="image">
+                    画像を選択する
+                </label>
+                <input class="sell__file" type="file" name="image" id="image">
+            </div>
         </div>
 
         <section class="sell__section">

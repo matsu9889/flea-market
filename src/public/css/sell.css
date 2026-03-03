@@ -12,6 +12,7 @@
 }
 
 .sell__label {
+    display: block;
     font-size: 20px;
     font-weight: bold;
     margin-bottom: 10px;
@@ -37,16 +38,34 @@
     cursor: pointer;
 }
 
-.sell__section {
-
-}
-
 .sell__section-title {
     color: #5F5F5F;
     padding-bottom: 10px;
     border-bottom: 1px solid #5F5F5F;
 }
 
+.sell__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 40px 20px;
+}
+
+.sell__tag-checkbox {
+    display: none;
+}
+
+.sell__tag-title {
+    padding: 5px 20px;
+    color: #FF5555;
+    border: 3px solid #FF5555;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.sell__tag-checkbox:checked +.sell__tag-title {
+    background-color: #FF5555;
+    color: #fff;
+}
 
 .sell__select {
     width: 100%;
@@ -72,6 +91,22 @@
     border-radius: 3px;
 }
 
+.sell__price-input {
+    position: relative;
+}
+
+.sell__yen {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #000;
+    font-weight: bold;
+}
+
+.sell__input--price {
+    padding-left: 30px;
+}
 
 .sell__submit {
     width: 100%;

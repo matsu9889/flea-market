@@ -27,60 +27,60 @@
                 <label class="sell__label">カテゴリー</label>
                 <div class="sell__tags">
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="1">
-                        <span>ファッション</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="1">
+                        <span class="sell__tag-title">ファッション</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="2">
-                        <span>家電</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="2">
+                        <span class="sell__tag-title">家電</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="3">
-                        <span>インテリア</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="3">
+                        <span class="sell__tag-title">インテリア</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="4">
-                        <span>レディース</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="4">
+                        <span class="sell__tag-title">レディース</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="5">
-                        <span>メンズ</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="5">
+                        <span class="sell__tag-title">メンズ</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="6">
-                        <span>コスメ</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="6">
+                        <span class="sell__tag-title">コスメ</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="7">
-                        <span>本</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="7">
+                        <span class="sell__tag-title">本</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="8">
-                        <span>ゲーム</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="8">
+                        <span class="sell__tag-title">ゲーム</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="9">
-                        <span>スポーツ</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="9">
+                        <span class="sell__tag-title">スポーツ</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="10">
-                        <span>キッチン</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="10">
+                        <span class="sell__tag-title">キッチン</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="11">
-                        <span>ハンドメイド</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="11">
+                        <span class="sell__tag-title">ハンドメイド</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="12">
-                        <span>アクセサリー</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="12">
+                        <span class="sell__tag-title">アクセサリー</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="13">
-                        <span>おもちゃ</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="13">
+                        <span class="sell__tag-title">おもちゃ</span>
                     </label>
                     <label class="sell__tag">
-                        <input type="checkbox" name="categories[]" value="14">
-                        <span>ベビー・キッズ</span>
+                        <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="14">
+                        <span class="sell__tag-title">ベビー・キッズ</span>
                     </label>
                 </div>
             </div>
@@ -112,8 +112,10 @@
             </div>
             <div class="sell__field">
                 <label for="price" class="sell__label">販売価格</label>
-                <span>&yen;</span>
-                <input class="sell__input" type="number" id="price" name="price">
+                <div class="sell__price-input">
+                    <span class="sell__yen">&yen;</span>
+                    <input class="sell__input sell__input--price" type="number" id="price" name="price">
+                </div>
             </div>
         </section>
 

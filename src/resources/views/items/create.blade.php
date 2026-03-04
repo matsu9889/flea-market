@@ -6,7 +6,7 @@
 @endsection
 
 @section('content')
-<form action="/sell" method="post">
+<form action="/sell" method="post" enctype="multipart/form-data">
     @csrf
     <div class="sell__container">
         <h1 class='sell__title'>商品の出品</h1>
@@ -99,12 +99,12 @@
         <section class="sell__section">
             <h2 class="sell__section-title">商品名と説明</h2>
             <div class="sell__field">
-                <label for="name" class="sell__label">商品名</label>
-                <input class="sell__input" type="text" name="name" id="name">
+                <label for="item_name" class="sell__label">商品名</label>
+                <input class="sell__input" type="text" name="item_name" id="item_name">
             </div>
             <div class="sell__field">
-                <label for="brand" class="sell__label">ブランド名</label>
-                <input class="sell__input" type="text" id="brand" name="brand">
+                <label for="brand_name" class="sell__label">ブランド名</label>
+                <input class="sell__input" type="text" id="brand_name" name="brand_name">
             </div>
             <div class="sell__field">
                 <label for="description" class="sell__label">商品の説明</label>

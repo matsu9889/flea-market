@@ -9,6 +9,17 @@ class Item extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'item_name',
+        'price',
+        'brand_name',
+        'description',
+        'img_url',
+        'category',
+        'condition',
+        'purchased_flag',
+    ];
+
     public function purchase()
     {
         return $this->hasOne(Purchase::class);

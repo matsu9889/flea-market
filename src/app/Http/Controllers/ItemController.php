@@ -7,6 +7,8 @@ use App\Http\Requests\CommentRequest;
 use App\Models\Item;
 use App\Models\Favorite;
 use App\Models\Comment;
+use App\Models\Category;
+
 
 class ItemController extends Controller
 {
@@ -93,30 +95,27 @@ class ItemController extends Controller
 
 
     //商品出品画面表示
-    public function create(Request $request)
+    public function create()
     {
-        return view('items.create');
+        $categories = Category::all();
+        return view('items.create', compact('categories'));
     }
 
     //商品出品
     public function store(Request $request)
     {
-        // 画像保存
         $path = $request->file('image')->store('items', 'public');
 
-        // カテゴリ配列 → 文字列に変換
-        $categoryString = implode(',', $request->categories);
-
-        Item::create([
+        $item = Item::create([
             'item_name' => $request->item_name,
             'price' => $request->price,
             'brand_name' => $request->brand_name,
             'description' => $request->description,
             'img_url' => $path,
-            'category' => $categoryString,
             'condition' => $request->condition,
-            'purchased_flag' => false,
         ]);
+
+        $item->categories()->sync($request->categories);
 
         return redirect('/');
     }

@@ -25,7 +25,21 @@
             <h2 class="sell__section-title">商品の詳細</h2>
             <div class="sell__field">
                 <label class="sell__label">カテゴリー</label>
-                <div class="sell__tags">
+
+                @foreach($categories as $category)
+                <label class="sell__tag">
+                    <input
+                        class="sell__tag-checkbox"
+                        type="checkbox"
+                        name="categories[]"
+                        value="{{ $category->id }}">
+                    <span class="sell__tag-title">
+                        {{ $category->name }}
+                    </span>
+                </label>
+                @endforeach
+
+                <!-- <div class="sell__tags">
                     <label class="sell__tag">
                         <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="1">
                         <span class="sell__tag-title">ファッション</span>
@@ -82,7 +96,7 @@
                         <input class="sell__tag-checkbox" type="checkbox" name="categories[]" value="14">
                         <span class="sell__tag-title">ベビー・キッズ</span>
                     </label>
-                </div>
+                </div> -->
             </div>
             <div class="sell__field">
                 <label class="sell__label">商品の状態</label>

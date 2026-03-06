@@ -53,7 +53,7 @@ class ItemController extends Controller
     // 商品詳細
     public function show($item_id)
     {
-        $item = Item::with(['purchase', 'listing'])
+        $item = Item::with(['purchase', 'listing', 'categories', 'comments.user'])
             ->withCount('favorites')
             ->withCount('comments')
             ->findOrFail($item_id);
@@ -105,7 +105,7 @@ class ItemController extends Controller
     //商品出品
     public function store(ExhibitionRequest $request)
     {
-        $path = $request->file('image')->store('items', 'public');
+        $path = $request->file('img_url')->store('items', 'public');
 
         $item = Item::create([
             'item_name' => $request->item_name,

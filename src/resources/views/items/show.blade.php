@@ -47,6 +47,9 @@
         <div class="item__section">
             <h2 class="item__section-title">商品の情報</h2>
             <h3 class="item__section-sub-title">カテゴリー</h3>
+            @foreach($item->categories as $category)
+            <div class="item__category">{{ $category->name }}</div>
+            @endforeach
             <h3 class="item__section-sub-title">商品の状態</h3>
             <p class="item__section-condition">{{ $item->condition }}</p>
         </div>

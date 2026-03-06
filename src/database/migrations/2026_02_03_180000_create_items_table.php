@@ -20,7 +20,6 @@ class CreateItemsTable extends Migration
             $table->string('brand_name')->nullable();
             $table->string('description');
             $table->string('img_url');
-            $table->string('category')->nullable(); //あとで直す
             $table->string('condition');
             $table->timestamps();
         });

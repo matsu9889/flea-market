@@ -20,8 +20,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => 'Rolax',
             'description' => 'スタイリッシュなデザインのメンズ腕時計',
             'img_url' => 'items/Clock.jpg',
-            'category' => NULL,
-            'condition' => '良好',
+            'condition' => '1',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -30,8 +29,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => '西芝',
             'description' => '高速で信頼性の高いハードディスク',
             'img_url' => 'items/HDD.jpg',
-            'category' => NULL,
-            'condition' => '目立った傷や汚れなし',
+            'condition' => '2',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -40,8 +38,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => 'なし',
             'description' => '新鮮な玉ねぎ3束のセット',
             'img_url' => 'items/Onion.jpg',
-            'category' => NULL,
-            'condition' => 'やや傷や汚れあり',
+            'condition' => '3',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -50,8 +47,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => NULL,
             'description' => 'クラシックなデザインの革靴',
             'img_url' => 'items/LeatherShoes.jpg',
-            'category' => NULL,
-            'condition' => '状態が悪い',
+            'condition' => '4',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -60,8 +56,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => NULL,
             'description' => '高性能なノートパソコン',
             'img_url' => 'items/PC.jpg',
-            'category' => NULL,
-            'condition' => '良好',
+            'condition' => '1',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -70,8 +65,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => 'なし',
             'description' => '高音質のレコーディング用マイク',
             'img_url' => 'items/Mic.jpg',
-            'category' => NULL,
-            'condition' => '目立った傷や汚れなし',
+            'condition' => '2',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -80,8 +74,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => NULL,
             'description' => 'おしゃれなショルダーバッグ',
             'img_url' => 'items/Bag.jpg',
-            'category' => NULL,
-            'condition' => 'やや傷や汚れあり',
+            'condition' => '3',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -90,8 +83,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => 'なし',
             'description' => '使いやすいタンブラー',
             'img_url' => 'items/Tumbler.jpg',
-            'category' => NULL,
-            'condition' => '状態が悪い',
+            'condition' => '4',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -100,8 +92,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => 'Starbacks',
             'description' => '手動のコーヒーミル',
             'img_url' => 'items/Coffee.jpg',
-            'category' => NULL,
-            'condition' => '良好',
+            'condition' => '1',
         ];
         DB::table('items')->insert($items);
         $items = [
@@ -110,8 +101,7 @@ class ItemsTableSeeder extends Seeder
             'brand_name' => NULL,
             'description' => '便利なメイクアップセット',
             'img_url' => 'items/Makeup.jpg',
-            'category' => NULL,
-            'condition' => '目立った傷や汚れなし',
+            'condition' => '2',
         ];
         DB::table('items')->insert($items);
     }

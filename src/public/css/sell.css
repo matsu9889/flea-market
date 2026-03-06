@@ -3,6 +3,12 @@
     margin: 50px auto;
 }
 
+@media screen and (max-width : 768px) {
+    .sell__container {
+        width: 70%;
+    }
+}
+
 .sell__title {
     text-align: center;
 }
@@ -24,6 +30,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    position: relative;
 }
 
 .sell__file {
@@ -47,7 +54,10 @@
 .sell__tags {
     display: flex;
     flex-wrap: wrap;
-    gap: 40px 20px;
+    gap: 30px 20px;
+}
+
+.sell__tag {
 }
 
 .sell__tag-checkbox {
@@ -106,6 +116,10 @@
 
 .sell__input--price {
     padding-left: 30px;
+}
+
+.sell__actions {
+    margin-top: 40px;
 }
 
 .sell__submit {

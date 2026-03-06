@@ -17,7 +17,7 @@
                 <label class="sell__image-button" for="image">
                     画像を選択する
                 </label>
-                <input class="sell__file" type="file" name="image" id="image">
+                <input class="sell__file" type="file" name="img_url" id="image">
             </div>
         </div>
 

@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Http\Requests\CommentRequest;
+use App\Http\Requests\ExhibitionRequest;
 use App\Models\Item;
 use App\Models\Favorite;
 use App\Models\Comment;
@@ -102,7 +103,7 @@ class ItemController extends Controller
     }
 
     //商品出品
-    public function store(Request $request)
+    public function store(ExhibitionRequest $request)
     {
         $path = $request->file('image')->store('items', 'public');
 

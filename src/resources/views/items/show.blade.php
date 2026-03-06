@@ -51,7 +51,7 @@
             <div class="item__category">{{ $category->name }}</div>
             @endforeach
             <h3 class="item__section-sub-title">商品の状態</h3>
-            <p class="item__section-condition">{{ $item->condition }}</p>
+            <div class="item__section-condition">{{ \App\Models\Item::CONDITIONS[$item->condition] }}</div>
         </div>
         <div class="item__section">
             <h2 class="item__section-comment">コメント({{ $item->comments_count }})</h2>

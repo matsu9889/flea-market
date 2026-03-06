@@ -12,6 +12,8 @@
 
 .item__img {
     width: 100%;
+    aspect-ratio: 1/1;
+    object-fit: cover;
 }
 
 .item-detail {
@@ -19,7 +21,7 @@
 }
 
 .item__name {
-    font-size: 32px;
+    font-size: 34px;
     font-weight: bold;
 }
 
@@ -28,7 +30,7 @@
 }
 
 .item__price {
-    font-size: 24px;
+    font-size: 30px;
 }
 
 .item__icon--container {
@@ -65,8 +67,25 @@
     margin-bottom: 10px;
 }
 
+.item__info-row {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
 .item__section-sub-title {
     font-size: 16px;
+}
+
+.item__category--container {
+    display: flex;
+    gap: 20px;
+}
+
+.item__category {
+    padding: 5px 10px;
+    background-color: #ddd;
+    border-radius: 25px;
 }
 
 .item__section-comment {

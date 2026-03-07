@@ -11,8 +11,8 @@
         @method('PATCH')
         @csrf
         <div class="image-group">
-            <div class="image">
-                <img src="" alt="プロフィール画像">
+            <div class="image-area">
+                <img class="image" src="{{ asset('storage/' . $user->image) }}" alt="プロフィール画像">
             </div>
             <div>
                 <label class="image-button" for="image">画像を選択する</label>

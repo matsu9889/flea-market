@@ -9,6 +9,7 @@ use App\Models\Item;
 use App\Models\Favorite;
 use App\Models\Comment;
 use App\Models\Category;
+use App\Models\Listing;
 
 
 class ItemController extends Controller
@@ -117,6 +118,11 @@ class ItemController extends Controller
         ]);
 
         $item->categories()->sync($request->categories);
+
+        Listing::create([
+            'user_id' => auth()->id(),
+            'item_id' => $item->id,
+        ]);
 
         return redirect('/');
     }

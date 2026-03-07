@@ -20,8 +20,8 @@
 
 
     <div class="tab-buttons">
-        <button type="button" class="tab-button active" data-tab="listing">出品商品</button>
-        <button type="button" class="tab-button" data-tab="purchase">購入商品</button>
+        <button type="button" class="tab-button active" data-tab="listing">出品した商品</button>
+        <button type="button" class="tab-button" data-tab="purchase">購入した商品</button>
     </div>
     <div class="tab-contents">
         <!-- 出品画面 -->

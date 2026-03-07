@@ -56,6 +56,32 @@ class User extends Authenticatable
         return $this->hasMany(Purchase::class);
     }
 
+    // 出品した商品一覧
+    public function listingItems()
+    {
+        return $this->hasManyThrough(
+            Item::class,
+            Listing::class,
+            'user_id', // Listingのuser_id
+            'id',      // Itemのid
+            'id',      // Userのid
+            'item_id'  // Listingのitem_id
+        );
+    }
+
+    // 購入した商品一覧
+    public function purchaseItems()
+    {
+        return $this->hasManyThrough(
+            Item::class,
+            Purchase::class,
+            'user_id', // Purchaseのuser_id
+            'id',      // Itemのid
+            'id',      // Userのid
+            'item_id'  // Purchaseのitem_id
+        );
+    }
+
     public function favorites()
     {
         return $this->hasMany(Favorite::class);

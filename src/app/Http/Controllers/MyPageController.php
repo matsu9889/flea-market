@@ -11,7 +11,11 @@ class MyPageController extends Controller
     public function show(Request $request)
     {
         $user = Auth::user();
-        return view('mypage.show', compact('user'));
+
+        $listingItems = $user->listingItems()->get();
+        $purchaseItems = $user->purchaseItems()->get();
+
+        return view('mypage.show', compact('user', 'listingItems', 'purchaseItems'));
     }
 
     public function edit()
@@ -47,7 +51,7 @@ class MyPageController extends Controller
         $user = Auth::user();
         $item = Item::findOrFail($item_id);
 
-        return view('mypage.address', compact('user','item'));
+        return view('mypage.address', compact('user', 'item'));
     }
 
     public function updateAddress(Request $request, $item_id)

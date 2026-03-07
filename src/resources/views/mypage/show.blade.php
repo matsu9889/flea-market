@@ -8,10 +8,10 @@
 <form action="/mypage" method="GET">
     <div class="profile">
         <div class="profile__image">
-            <img src="" alt="プロフィール画像">
+            <img src="{{ asset('storage/' . $user->image) }}" alt="プロフィール画像">
         </div>
         <div class="profile__user-name">
-            <h2>ユーザー名</h2>
+            <h2>{{ $user->user_name }}</h2>
         </div>
         <div class="profile__link">
             <a class="profile__link-edit" href="/mypage/profile">プロフィールを編集</a>

@@ -17,7 +17,6 @@ class Item extends Model
         'img_url',
         'category',
         'condition',
-        'purchased_flag',
     ];
 
     public function purchase()
@@ -58,7 +57,4 @@ class Item extends Model
         3 => 'やや傷や汚れあり',
         4 => '状態が悪い',
     ];
-
 }
-
-

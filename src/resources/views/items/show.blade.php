@@ -63,9 +63,13 @@
             <h2 class="item__section-comment">コメント({{ $item->comments_count }})</h2>
             @foreach($item->comments as $comment)
             <div class="item__section-comment__list">
-                <img class="item__comment--user-image" src="{{ asset('storage/' . $comment->user->image) }}" alt="ユーザー画像">
-                <div class="item__comment--user-name">{{ $comment->user->user_name }}</div>
-                <div class="item__comment--content">{{ $comment->content }}</div>
+                <div class="item__section-comment-row">
+                    <div class="item__comment--user-image-area">
+                        <img class="item__comment--user-image" src="{{ asset('storage/' . $comment->user->image) }}" alt="ユーザー画像">
+                    </div>
+                    <div class="item__comment--user-name">{{ $comment->user->user_name }}</div>
+                </div>
+                <div class="item__comment">{{ $comment->content }}</div>
             </div>
             @endforeach
         </div>

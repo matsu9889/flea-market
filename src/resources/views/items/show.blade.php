@@ -78,6 +78,9 @@
                 @csrf
                 <h2 class="item__section-comment__title">商品へのコメント</h2>
                 <textarea class="item__section-comment__textarea" name="content">{{ old('content') }}</textarea>
+                @error('content')
+                <p class="error">{{ $message }}</p>
+                @enderror
                 <button class="item__section-comment__button">コメントを送信する</button>
             </form>
         </div>

@@ -19,6 +19,9 @@
                 </label>
                 <input class="sell__file" type="file" name="img_url" id="image">
             </div>
+            @error('img_url')
+            <p class="error">{{ $message }}</p>
+            @enderror
         </div>
 
         <section class="sell__section">
@@ -39,6 +42,9 @@
                     </label>
                     @endforeach
                 </div>
+                @error('categories')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
             <div class="sell__field">
                 <label class="sell__label">商品の状態</label>
@@ -49,6 +55,9 @@
                     <option value="3">やや傷や汚れあり</option>
                     <option value="4">状態が悪い</option>
                 </select>
+                @error('condition')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
         </section>
 
@@ -57,6 +66,9 @@
             <div class="sell__field">
                 <label for="item_name" class="sell__label">商品名</label>
                 <input class="sell__input" type="text" name="item_name" id="item_name">
+                @error('item_name')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
             <div class="sell__field">
                 <label for="brand_name" class="sell__label">ブランド名</label>
@@ -65,6 +77,9 @@
             <div class="sell__field">
                 <label for="description" class="sell__label">商品の説明</label>
                 <textarea class="sell__textarea" id="description" name="description"></textarea>
+                @error('description')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
             <div class="sell__field">
                 <label for="price" class="sell__label">販売価格</label>
@@ -72,6 +87,9 @@
                     <span class="sell__yen">&yen;</span>
                     <input class="sell__input sell__input--price" type="number" id="price" name="price">
                 </div>
+                @error('price')
+                <p class="error">{{ $message }}</p>
+                @enderror
             </div>
         </section>
 

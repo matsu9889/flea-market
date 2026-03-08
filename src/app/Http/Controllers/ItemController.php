@@ -84,13 +84,11 @@ class ItemController extends Controller
     {
         $item = Item::findOrFail($item_id);
 
-        if (auth()->check()) {
-            Comment::create([
-                'user_id' => auth()->id(),
-                'item_id' => $item_id,
-                'content' => $request->content,
-            ]);
-        };
+        Comment::create([
+            'user_id' => auth()->id(),
+            'item_id' => $item_id,
+            'content' => $request->content,
+        ]);
 
         return redirect('/item/' . $item_id);
     }

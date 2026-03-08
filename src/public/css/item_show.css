@@ -145,3 +145,8 @@
     width: 100%;
     cursor: pointer;
 }
+
+.error {
+    color: red;
+    font-size: 14px;
+}

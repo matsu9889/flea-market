@@ -20,7 +20,7 @@
         </div>
         <div class="payment">
             <h2>支払い方法</h2>
-            <select class="payment__select" name="payment" id="">
+            <select class="payment__select" name="payment_method" id="">
                 <option value="">選択してください</option>
                 <option value="1">コンビニ支払い</option>
                 <option value="2">カード支払い</option>
@@ -34,6 +34,10 @@
             <div class="delivery__address">〒{{ session('post_code') ?? Auth::user()->post_code }}</div>
             <div class="delivery__address">{{ session('address') ?? Auth::user()->address }}</div>
             <div class="delivery__address">{{ session('building') ?? Auth::user()->building }}</div>
+
+            <input type="hidden" name="post_code" value="{{ session('post_code') ?? Auth::user()->post_code }}">
+            <input type="hidden" name="address" value="{{ session('address') ?? Auth::user()->address }}">
+            <input type="hidden" name="building" value="{{ session('building') ?? Auth::user()->building }}">
         </div>
         <div class="confirmation">
             <div class="confirmation__content">

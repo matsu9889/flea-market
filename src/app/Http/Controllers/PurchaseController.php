@@ -7,6 +7,7 @@ use App\Models\Purchase;
 
 
 use Illuminate\Http\Request;
+use App\Http\Requests\PurchaseRequest;
 
 class PurchaseController extends Controller
 {
@@ -18,7 +19,7 @@ class PurchaseController extends Controller
         return view('items.purchase', compact('item'));
     }
 
-    public function store(Request $request, $item_id)
+    public function store(PurchaseRequest $request, $item_id)
     {
         Purchase::create([
             'user_id' => auth()->id(),

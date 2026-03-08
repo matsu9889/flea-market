@@ -19,7 +19,7 @@ class ItemController extends Controller
     {
         $keyword = $request->input('keyword', '');
 
-        $query = Item::with(['purchase', 'listing']); //withの意味
+        $query = Item::with(['purchase', 'listing']);
 
         //商品一覧取得
         if (auth()->check()) {
@@ -39,7 +39,7 @@ class ItemController extends Controller
         $items = $query->get();
 
         // マイリスト取得
-        $mylistItems = collect(); //空にしている。必要かどうか
+        $mylistItems = collect();
         if (auth()->check()) {
             $mylistItems = Item::with(['purchase', 'listing'])
                 ->whereHas('favorites', function ($q) {

@@ -24,9 +24,9 @@ class PurchaseController extends Controller
             'user_id' => auth()->id(),
             'item_id' => $item_id,
             'payment_method' => $request->payment,
-            'post_code'=>session()->get('post_code'),
-            'address'=>session()->get('address'),
-            'building'=>session()->get('building')
+            'post_code' => session()->get('post_code'),
+            'address' => session()->get('address'),
+            'building' => session()->get('building')
         ]);
 
         return redirect('/');

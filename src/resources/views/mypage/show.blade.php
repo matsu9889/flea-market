@@ -29,10 +29,12 @@
             <div class="listing-container">
                 @foreach($listingItems as $listingItem)
                 <div class="listing-item">
-                    <div class="listing-item__image-area">
-                        <img class="listing-item__image" src="{{ asset('storage/' . $listingItem->img_url) }}" alt="商品画像">
-                    </div>
-                    <p class="listing-item-name">{{ $listingItem->item_name }}</p>
+                    <a class="item__link" href="/item/{{ $listingItem->id }}">
+                        <div class="listing-item__image-area">
+                            <img class="listing-item__image" src="{{ asset('storage/' . $listingItem->img_url) }}" alt="商品画像">
+                        </div>
+                        <p class="listing-item-name">{{ $listingItem->item_name }}</p>
+                    </a>
                 </div>
                 @endforeach
             </div>
@@ -42,10 +44,12 @@
             <div class="purchase-container">
                 @foreach($purchaseItems as $purchaseItem)
                 <div class="purchase-item">
-                    <div class="purchase-item__image-area">
-                        <img class="purchase-item__image" src="{{ asset('storage/' . $purchaseItem->img_url) }}" alt="商品画像">
-                    </div>
-                    <p class="purchase-item-name">{{ $purchaseItem->item_name }}</p>
+                    <a class="item__link" href="/item/{{ $purchaseItem->id }}">
+                        <div class="purchase-item__image-area">
+                            <img class="purchase-item__image" src="{{ asset('storage/' . $purchaseItem->img_url) }}" alt="商品画像">
+                        </div>
+                        <p class="purchase-item-name">{{ $purchaseItem->item_name }}</p>
+                    </a>
                 </div>
                 @endforeach
             </div>

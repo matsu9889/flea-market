@@ -20,7 +20,6 @@ use App\Http\Controllers\PurchaseController;
 Route::get('/', [ItemController::class, 'index']);
 Route::get('/item/{item_id}', [ItemController::class, 'show']);
 Route::middleware('auth')->group(function () {
-    Route::get('/?tab=mylist', [MyPageController::class, 'index']);
     Route::post('/item/{item_id}/favorite', [ItemController::class, 'toggleFavorite']);
     Route::post('/item/{item_id}/comment', [ItemController::class, 'storeComment']);
     Route::get('/sell', [ItemController::class, 'create']);

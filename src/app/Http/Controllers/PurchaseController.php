@@ -24,7 +24,7 @@ class PurchaseController extends Controller
         Purchase::create([
             'user_id' => auth()->id(),
             'item_id' => $item_id,
-            'payment_method' => $request->payment,
+            'payment_method' => $request->payment_method,
             'post_code' => session()->get('post_code'),
             'address' => session()->get('address'),
             'building' => session()->get('building')

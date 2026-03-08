@@ -6,7 +6,7 @@ coachtechフリマは、商品を出品・購入できるフリマアプリで�
 
 ## 環境構築
 ### GitHubリポジトリをクローン
-git clone git@github.com:Estra-Coachtech/laravel-docker-template.git % ギットハブのURLは変える
+git clone git@github.com:matsu9889/flea-market.git
 git remote set-url origin 作成したリポジトリのurl
 git add .
 git commit -m "リモートリポジトリの変更"

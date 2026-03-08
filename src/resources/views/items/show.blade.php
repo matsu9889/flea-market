@@ -12,13 +12,9 @@
     </div>
 
     <div class="item-detail">
-        <!-- 商品名 -->
         <h1 class="item__name">{{ $item->item_name }}</h1>
-        <!-- ブランド名 -->
         <p class="item__brand">{{ $item->brand_name }}</p>
-        <!-- 金額 -->
         <p class="item__price--yen">&yen;<span class="item__price">{{ $item->price }}</span>(税込)</p>
-        <!-- いいねボタン、コメントボタン -->
         <div class="item__icon--container">
             <div class="item__icon">
                 <form action="/item/{{ $item->id }}/favorite" method="POST">

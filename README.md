@@ -8,6 +8,7 @@ coachtechフリマは、商品を出品・購入できるフリマアプリで�
 ### GitHubリポジトリをクローン
 git clone git@github.com:matsu9889/flea-market.git
 git remote set-url origin 作成したリポジトリのurl
+git remote -v
 git add .
 git commit -m "リモートリポジトリの変更"
 git push origin main
